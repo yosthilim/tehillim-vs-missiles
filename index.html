@@ -226,4 +226,530 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.5r
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary), #1d4ed8);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-trend {
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+
+        .stat-trend.up {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .stat-trend.down {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .prayer-section {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 25px;
+            padding: 4rem 3rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prayer-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(251, 191, 36, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .prayer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .prayer-counter {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--purple), #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .prayer-label {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        .psalm-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border: 2px solid rgba(139, 92, 246, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: right;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .psalm-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--purple), #7c3aed);
+        }
+
+        .psalm-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--purple);
+            margin-bottom: 1.5rem;
+        }
+
+        .psalm-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            font-style: italic;
+            white-space: pre-line;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-purple {
+            background: linear-gradient(135deg, var(--purple), #7c3aed);
+            color: white;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary), #1d4ed8);
+            color: white;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text-light);
+            border: 2px solid #e5e7eb;
+        }
+
+        .btn-secondary:hover {
+            background: #f9fafb;
+            color: var(--text-dark);
+        }
+
+        .reading-progress {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            display: none;
+        }
+
+        .progress-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-encouragement {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .toast {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 9997;
+            transform: translateX(400px);
+            transition: transform 0.4s ease;
+            max-width: 400px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast-success {
+            border-left: 5px solid var(--success);
+        }
+
+        .toast-info {
+            border-left: 5px solid var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .main {
+                padding: 2rem 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .prayer-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .toast {
+                top: 1rem;
+                right: 1rem;
+                left: 1rem;
+                transform: translateY(-100px);
+                max-width: none;
+            }
+            
+            .toast.show {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">✡</div>
+                <span>תהילים נגד טילים</span>
+            </div>
+            
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>מחובר בזמן אמת</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <div id="toastMessage"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <h1 class="hero-title">תהילים נגד טילים</h1>
+            <p class="hero-subtitle">
+                הגנה רוחנית בזמן אמת • חיבור עולמי לתפילה משותפת נגד איומים
+            </p>
+            <div class="hero-stats">
+                🌍 <span id="onlineUsers">67,432</span> משתמשים מחוברים עכשיו
+            </div>
+        </section>
+
+        <div class="main">
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card" onclick="animateCard(this)">
+                    <div class="stat-header">
+                        <div class="stat-icon">🚀</div>
+                        <div class="stat-trend down">↓ 25%</div>
+                    </div>
+                    <div class="stat-number" id="todayMissiles">3</div>
+                    <div class="stat-label">שיגורים היום</div>
+                </div>
+                
+                <div class="stat-card" onclick="animateCard(this)">
+                    <div class="stat-header">
+                        <div class="stat-icon">📖</div>
+                        <div class="stat-trend up">↑ 73%</div>
+                    </div>
+                    <div class="stat-number" id="globalPsalmCount">387,432</div>
+                    <div class="stat-label">תהילים נקראו היום</div>
+                </div>
+                
+                <div class="stat-card" onclick="animateCard(this)">
+                    <div class="stat-header">
+                        <div class="stat-icon">🛡️</div>
+                        <div class="stat-trend up">↑ 4%</div>
+                    </div>
+                    <div class="stat-number" id="interceptRate">99%</div>
+                    <div class="stat-label">יעילות יירוט</div>
+                </div>
+                
+                <div class="stat-card" onclick="animateCard(this)">
+                    <div class="stat-header">
+                        <div class="stat-icon">🙏</div>
+                        <div class="stat-trend up">↑ 689</div>
+                    </div>
+                    <div class="stat-number" id="activePrayers">67,432</div>
+                    <div class="stat-label">מתפללים פעילים</div>
+                </div>
+
+                <div class="stat-card" onclick="animateCard(this)">
+                    <div class="stat-header">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-trend down">↓ 8s</div>
+                    </div>
+                    <div class="stat-number" id="responseTime">12</div>
+                    <div class="stat-label">שניות זמן תגובה</div>
+                </div>
+
+                <div class="stat-card" onclick="animateCard(this)">
+                    <div class="stat-header">
+                        <div class="stat-icon">🌍</div>
+                        <div class="stat-trend up">↑ 23</div>
+                    </div>
+                    <div class="stat-number" id="countriesCount">127</div>
+                    <div class="stat-label">מדינות מתפללות</div>
+                </div>
+            </div>
+
+            <!-- Prayer Section -->
+            <section class="prayer-section">
+                <div class="prayer-content">
+                    <div class="prayer-counter" id="liveCounter">67,432</div>
+                    <div class="prayer-label">יהודים קוראים תהילים ברגע זה נגד איומים</div>
+                    
+                    <div class="psalm-card" id="currentPsalmDisplay">
+                        <div class="psalm-title">תהילים קכא - שיר למעלות</div>
+                        <div class="psalm-text" id="psalmText">
+אֶשָּׂא עֵינַי אֶל הֶהָרִים מֵאַיִן יָבֹא עֶזְרִי׃
+עֶזְרִי מֵעִם יְהֹוָה עֹשֵׂה שָׁמַיִם וָאָרֶץ׃
+אַל יִתֵּן לַמּוֹט רַגְלֶךָ אַל יָנוּם שֹׁמְרֶךָ׃
+הִנֵּה לֹא יָנוּם וְלֹא יִישָׁן שׁוֹמֵר יִשְׂרָאֵל׃
+יְהֹוָה שֹׁמְרֶךָ יְהֹוָה צִלְּךָ עַל יַד יְמִינֶךָ׃
+יוֹמָם הַשֶּׁמֶשׁ לֹא יַכֶּכָּה וְיָרֵחַ בַּלָּיְלָה׃
+יְהֹוָה יִשְׁמׇרְךָ מִכׇּל רָע יִשְׁמֹר אֶת נַפְשֶׁךָ׃
+יְהֹוָה יִשְׁמׇר צֵאתְךָ וּבוֹאֶךָ מֵעַתָּה וְעַד עוֹלָם׃
+                        </div>
+                    </div>
+
+                    <!-- Reading Progress -->
+                    <div class="reading-progress" id="readingProgress">
+                        <div class="progress-text">📖 קורא תהילים...</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-encouragement" id="progressEncouragement">
+                            המשך לקרוא - כל מילה מחזקת את ההגנה הרוחנית
+                        </div>
+                    </div>
+
+                    <div class="action-grid">
+                        <button class="btn btn-purple" onclick="startReading()">
+                            📖 התחל קריאה
+                        </button>
+                        <button class="btn btn-purple" id="finishBtn" onclick="finishReading()" style="display: none;">
+                            🙏 סיימתי - יירט עכשיו!
+                        </button>
+                        <button class="btn btn-primary" onclick="getRandomPsalm()">
+                            🔄 פרק אקראי
+                        </button>
+                        <button class="btn btn-gold" onclick="dedicatePrayer()">
+                            💝 הקדש תפילה
+                        </button>
+                        <button class="btn btn-secondary" onclick="shareApp()">
+                            📱 שתף
+                        </button>
+                    </div>
+
+                    <div style="margin-top: 3rem; color: var(--text-light); font-size: 1.1rem;">
+                        🌟 כל תפילה מחזקת את כיפת ההגנה הרוחנית של עם ישראל
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Global State
+        let prayerCount = 387432;
+        let activePrayers = 67432;
+        let readingInProgress = false;
+        let readingCompleted = false;
+
+        // Functions
+        function startReading() {
+            if (readingInProgress) return;
+            
+            readingInProgress = true;
+            readingCompleted = false;
+            
+            document.getElementById('readingProgress').style.display = 'block';
+            document.querySelector('.btn-purple').style.display = 'none';
+            
+            showToast('התחלת קריאת תהילים - קרא בכוונה ובריכוז', 'info');
+            
+            let progress = 0;
+            const readingTime = 30000;
+            const interval = readingTime / 100;
+            
+            const progressInterval = setInterval(() => {
+                progress += 1;
+                document.getElementById('progressFill').style.width = progress + '%';
+                
+                const encouragement = document.getElementById('progressEncouragement');
+                if (progress === 25) {
+                    encouragement.textContent = '💪 כל מילה מחזקת את המגן הרוחני';
+                } else if (progress === 50) {
+                    encouragement.textContent = '🔥 אתה באמצע הדרך - המשך בכוח!';
+                } else if (progress === 75) {
+                    encouragement.textContent = '🎯 כמעט סיימת - ההגנה מתחזקת!';
+                } else if (progress === 95) {
+                    encouragement.textContent = '🚀 עוד רגע והיירוט יהיה מוכן!';
+                }
+                
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                    completeReading();
+                }
+            }, interval);
+        }
+
+        function completeReading() {
+            readingInProgress = false;
+            readingCompleted = true;
+            
+            document.getElementById('readingProgress').style.display = 'none';
+            document.getElementById('finishBtn').style.display = 'block';
+            document.getElementById('finishBtn').style.animation = 'pulse 1s infinite';
+            
+            showToast('✅ קריאה הושלמה! עכשיו אפשר ליירט את הטיל', 'success');
+        }
+
+        function finishReading() {
+            if (!readingCompleted) {
+                showToast('קודם צריך לסיים לקרוא את פרק התהילים', 'info');
+                return;
+            }
+
+            prayerCount++;
+            activePrayers++;
+            document.getElementById('globalPsalmCount').textContent = prayerCount.toLocaleString();
+            document.getElementById('liveCounter').textContent = activePrayers.toLocaleString();
+            document.getElementById('activePrayers').textContent = activePrayers.toLocaleString();
+
+            showToast('🎉 מזל טוב! התפילה שלך חיזקה את ההגנה הרוחנית!', 'success');
+            
+            readingCompleted = false;
+            document.getElementById('finishBtn').style.display = 'none';
