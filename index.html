@@ -1,1 +1,229 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>תהילים נגד טילים - הגנה רוחנית בזמן אמת</title>
+    
+    <!-- SEO and Social Media Meta Tags -->
+    <meta name="description" content="האפליקציה שמחברת בין התרעות פיקוד העורף לתפילה קולקטיבית. במקום לרפרש חדשות - בואו נקרא תהילים ונבנה הגנה רוחנית לעם ישראל.">
+    <meta name="keywords" content="תהילים, פיקוד העורף, התרעות, תפילה, עם ישראל, הגנה רוחנית, צבע אדום">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="תהילים נגד טילים - הגנה רוחנית בזמן אמת">
+    <meta property="og:description" content="במקום לרפרש חדשות - בואו נקרא תהילים ונבנה הגנה רוחנית לעם ישראל. 67,432 מתפללים מחוברים עכשיו!">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#fbbf24">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="תהילים נגד טילים">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #fbbf24;
+            --primary-dark: #f59e0b;
+            --secondary: #3b82f6;
+            --success: #10b981;
+            --danger: #ef4444;
+            --purple: #8b5cf6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: rgba(255, 255, 255, 0.95);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #fef3c7 75%, #fde68a 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: var(--shadow);
+            padding: 1.5rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: var(--shadow);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--success);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--secondary) 50%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            gap: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5r
