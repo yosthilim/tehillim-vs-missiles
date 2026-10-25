@@ -25,6 +25,7 @@ normalizes loudness to -14 LUFS.
 - `src/Composition.tsx` — scene order, durations, transitions, compositions
 - `src/components.tsx` — backdrop, word-by-word reveal, gold rule, shine
 - `src/theme.ts` — colors and fonts
+- `renders/` — the final MP4s and thumbnails
 
 Fonts (Frank Ruhl Libre, Heebo) are bundled in `public/fonts` under the
 SIL Open Font License (see the `OFL-*.txt` files there).
